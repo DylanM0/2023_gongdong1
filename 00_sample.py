@@ -14,6 +14,10 @@ import folium
 from folium import plugins
 from streamlit_folium import st_folium
 
+
+import pip
+pip.main(["install", "openpyxl"])
+
 # import matplotlib as mpl
 # import matplotlib.pyplot as plt
 # import matplotlib.font_manager as fm
