@@ -6,22 +6,18 @@
 
 import streamlit as st  # pip install streamlit
 import pandas as pd  # pip install pandas
-import plotly.express as px  # pip install plotly-express
-import base64  # Standard Python Module
-from io import StringIO, BytesIO  # Standard Python Module
+# import plotly.express as px  # pip install plotly-express
+# import base64  # Standard Python Module
+# from io import StringIO, BytesIO  # Standard Python Module
 
 import folium
 from folium import plugins
 from streamlit_folium import st_folium
 
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
+# import matplotlib.font_manager as fm
 
-fontpath = 'C:\\Users\\입학관리\\AppData\\Local\\Microsoft\\Windows\\Fonts\\NanumGothic.ttf'
-font = fm.FontProperties(fname=fontpath, size=9)
-plt.rc('font',family='NanumGothic')
-mpl.font_manager._rebuild()
 
 
 
@@ -74,8 +70,8 @@ if uploaded_file:
     
     import json
 
-#     state_geo = 'C://pdata/python/2022_공동연구/SIG.geojson'
-#     state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
+     state_geo = 'SIG.geojson'
+     state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
     
     
     regional_count종합1=df종합1[['위도','경도']]
