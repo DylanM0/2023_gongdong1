@@ -70,7 +70,7 @@ if uploaded_file:
     
     import json
 
-     state_geo = '/app/2023_gongdong1/SIG.geojson'
+     state_geo = '/2023_gongdong1/SIG.geojson'
      state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
     
     
