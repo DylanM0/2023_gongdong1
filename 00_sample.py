@@ -16,9 +16,9 @@ from streamlit_folium import st_folium
 
 
 
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
+# import matplotlib.font_manager as fm
 
 
 
