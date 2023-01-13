@@ -68,7 +68,7 @@ if uploaded_file:
     df교과['SIG_CD'] = df교과['SIG_CD'].astype(str)
     df교과1['SIG_CD'] = df교과1['SIG_CD'].astype(str)
     
-    import json
+#    import json
 
      state_geo = 'data/SIG.geojson'
      state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
