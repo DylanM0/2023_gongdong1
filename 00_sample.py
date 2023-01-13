@@ -94,45 +94,45 @@ if uploaded_file:
     m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', zoom_start=8)
 
 
-    choropleth = folium.Choropleth(
-        geo_data=state_geo1,
-        name='sigun_people',
-        data=df종합00,
-        columns = ('SIG_CD','지원자'),
-        key_on = 'feature.properties.SIG_CD',
-        fill_color='BuPu',
-        fill_opactiy=0.7,
-        line_opacity=0.5,
-        legend_name='jonghab_all'
-    ).add_to(m.m1)
+        choropleth = folium.Choropleth(
+            geo_data=state_geo1,
+            name='sigun_people',
+            data=df종합00,
+            columns = ('SIG_CD','지원자'),
+            key_on = 'feature.properties.SIG_CD',
+            fill_color='BuPu',
+            fill_opactiy=0.7,
+            line_opacity=0.5,
+            legend_name='jonghab_all'
+        ).add_to(m.m1)
 
 
-    plugins.Fullscreen(position='topright',
-                     title='Click to Expand',
-                     title_cancel='Click to Exit',
-                     force_separate_button=True).add_to(m.m1)
-    plugins.MousePosition().add_to(m.m1)
-    plugins.MarkerCluster(regional_count종합).add_to(m.m1)
+        plugins.Fullscreen(position='topright',
+                         title='Click to Expand',
+                         title_cancel='Click to Exit',
+                         force_separate_button=True).add_to(m.m1)
+        plugins.MousePosition().add_to(m.m1)
+        plugins.MarkerCluster(regional_count종합).add_to(m.m1)
 
 
-    choropleth = folium.Choropleth(
-        geo_data=state_geo1,
-        name='sigun_people',
-        data=df종합11,
-        columns = ('SIG_CD','지원자'),
-        key_on = 'feature.properties.SIG_CD',
-        fill_color='RdPu',
-        fill_opactiy=0.7,
-        line_opacity=0.5,
-        legend_name='jonghab_over5'
-    ).add_to(m.m2)
+        choropleth = folium.Choropleth(
+            geo_data=state_geo1,
+            name='sigun_people',
+            data=df종합11,
+            columns = ('SIG_CD','지원자'),
+            key_on = 'feature.properties.SIG_CD',
+            fill_color='RdPu',
+            fill_opactiy=0.7,
+            line_opacity=0.5,
+            legend_name='jonghab_over5'
+        ).add_to(m.m2)
 
-    plugins.Fullscreen(position='topright',
-                     title='Click to Expand',
-                     title_cancel='Click to Exit',
-                     force_separate_button=True).add_to(m.m2)
-    plugins.MousePosition().add_to(m.m2)
-    plugins.MarkerCluster(regional_count종합1).add_to(m.m2)
+        plugins.Fullscreen(position='topright',
+                         title='Click to Expand',
+                         title_cancel='Click to Exit',
+                         force_separate_button=True).add_to(m.m2)
+        plugins.MousePosition().add_to(m.m2)
+        plugins.MarkerCluster(regional_count종합1).add_to(m.m2)
     
     
     st_folium(m)
