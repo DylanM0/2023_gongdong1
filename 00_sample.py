@@ -65,10 +65,6 @@ if uploaded_file:
     df종합1 = df종합[df종합['지원자']>=5]
     df교과1 = df교과[df교과['지원자']>=5]
     
-    df종합['SIG_CD'] = df종합['SIG_CD'].astype(str)
-    df종합1['SIG_CD'] = df종합1['SIG_CD'].astype(str)
-    df교과['SIG_CD'] = df교과['SIG_CD'].astype(str)
-    df교과1['SIG_CD'] = df교과1['SIG_CD'].astype(str)
     
     import json
     
