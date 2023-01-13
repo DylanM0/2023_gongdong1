@@ -68,10 +68,10 @@ if uploaded_file:
     df교과['SIG_CD'] = df교과['SIG_CD'].astype(str)
     df교과1['SIG_CD'] = df교과1['SIG_CD'].astype(str)
     
-#    import json
-
-     state_geo = 'data/SIG.geojson'
-     state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
+    import json
+    
+    state_geo = 'data/SIG.geojson'
+    state_geo1 = json.load(open(state_geo, encoding ='utf-8'))
     
     
     regional_count종합1=df종합1[['위도','경도']]
