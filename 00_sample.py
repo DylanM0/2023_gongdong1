@@ -86,8 +86,10 @@ if uploaded_file:
     
     df교과11 = pd.DataFrame(df교과1.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
     df교과11['SIG_CD'] = df교과11['SIG_CD'].astype(str)
+    df교과11['지원자'] = df교과11['지원자'].astype(int)
     df교과00 = pd.DataFrame(df교과.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
     df교과00['SIG_CD'] = df교과00['SIG_CD'].astype(str)
+    df교과00['지원자'] = df교과00['지원자'].astype(int)
     
     
     from folium.features import DivIcon
