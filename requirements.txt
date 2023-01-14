@@ -3,4 +3,4 @@ folium
 streamlit
 streamlit_folium
 openpyxl
-base64
+io
