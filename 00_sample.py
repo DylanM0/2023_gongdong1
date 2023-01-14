@@ -85,7 +85,7 @@ if uploaded_file:
     df종합11['SIG_CD'] = df종합11['SIG_CD'].astype(str)
     df종합11['SIG_CD'] = StringIO(df종합11['SIG_CD'].getvalue().encode())
     df종합00 = pd.DataFrame(df종합.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
-        df종합00['SIG_CD'] = df종합00['SIG_CD'].astype(str)
+    df종합00['SIG_CD'] = df종합00['SIG_CD'].astype(str)
     df종합00['SIG_CD'] = StringIO(df종합00['SIG_CD'].getvalue().encode())
     
     
