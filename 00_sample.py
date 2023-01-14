@@ -142,7 +142,7 @@ if uploaded_file:
     plugins.MousePosition().add_to(m.m2)
     plugins.MarkerCluster(regional_count종합1).add_to(m.m2)
     
-    
+    m.save("듀얼맵.html", close_file=True)
     
     st_folium(m)
     
