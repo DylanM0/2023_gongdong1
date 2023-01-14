@@ -3,3 +3,4 @@ folium
 streamlit
 streamlit_folium
 openpyxl
+plugin
