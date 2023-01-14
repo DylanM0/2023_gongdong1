@@ -184,8 +184,8 @@ if uploaded_file:
 
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
-#   generate_excel_download_link(df_grouped)
-    generate_html_download_link(m)
+    generate_excel_download_link(dfa)
+#   generate_html_download_link(m)
 
 
 
