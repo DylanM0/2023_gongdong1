@@ -138,7 +138,7 @@ if uploaded_file:
     plugins.MousePosition().add_to(m.m2)
     plugins.MarkerCluster(regional_count종합1).add_to(m.m2)
     
-    m.save("듀얼맵.html",close_file=True)
+    # m.save("듀얼맵.html",close_file=True)
     
     st_folium(m)
     
@@ -169,7 +169,7 @@ if uploaded_file:
     # -- DOWNLOAD SECTION
 #     st.subheader('Downloads:')
 #     generate_excel_download_link(df_grouped)
-     st.markdown(m, unsafe_allow_html=True)
+    st.markdown(m, unsafe_allow_html=True)
 
 
 
