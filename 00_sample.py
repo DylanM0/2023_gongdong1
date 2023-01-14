@@ -38,14 +38,14 @@ def generate_excel_download_link(df):
     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Download Excel File</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
-def generate_html_download_link(fig):
+def generate_html_download_link(m):
     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
     towrite = StringIO()
     fig.write_html(towrite, include_plotlyjs="cdn")
     towrite = BytesIO(towrite.getvalue().encode())
     b64 = base64.b64encode(towrite.read()).decode()
     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="plot.html">Download Plot</a>'
-    return st.markdown(href, unsafe_allow_html=True)
+    return st.markdown(m, unsafe_allow_html=True)
 
 
 st.set_page_config(layout="wide")
@@ -138,6 +138,7 @@ if uploaded_file:
     plugins.MousePosition().add_to(m.m2)
     plugins.MarkerCluster(regional_count종합1).add_to(m.m2)
     
+    m.save("듀얼맵.html",close_file=True)
     
     st_folium(m)
     
@@ -166,9 +167,9 @@ if uploaded_file:
 #     st.plotly_chart(fig)
 
     # -- DOWNLOAD SECTION
-#     st.subheader('Downloads:')
+     st.subheader('Downloads:')
 #     generate_excel_download_link(df_grouped)
-#     generate_html_download_link(m)
+     st.markdown(m._repr_html_(), unsafe_allow_html=True)
 
 
 
