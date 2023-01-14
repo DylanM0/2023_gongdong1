@@ -170,9 +170,9 @@ if uploaded_file:
 #     st.plotly_chart(fig)
 
     # -- DOWNLOAD SECTION
-    st.subheader('Downloads:')
+#    st.subheader('Downloads:')
 #   generate_excel_download_link(df_grouped)
-    generate_html_download_link(m)
+#    generate_html_download_link(m)
 
 
 
