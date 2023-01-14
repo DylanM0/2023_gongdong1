@@ -125,7 +125,7 @@ if uploaded_file:
     choropleth = folium.Choropleth(
         geo_data=state_geo1,
         name='sigun_people',
-        data=df교과00,
+        data=df종합11,
         columns = ['SIG_CD','지원자'],
         key_on = 'feature.properties.SIG_CD',
         nan_fill_color='black',
