@@ -109,7 +109,7 @@ if uploaded_file:
     
     
     from folium.features import DivIcon
-    m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', zoom_start=8)
+    m = folium.plugins.DualMap(location = [37.195,127.5], tiles = 'OpenStreetMap', zoom_start=7)
 
 
     choropleth = folium.Choropleth(
