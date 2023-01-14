@@ -38,12 +38,13 @@ def generate_excel_download_link(df):
     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Download Excel File</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
-def generate_html_download_link(m):
+def generate_html_download_link(ddf):
     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
     # towrite = StringIO()
     towrite = BytesIO(towrite.getvalue().encode())    
-    m.write_html(towrite, include_plotlyjs="cdn")
+    # ddf.write_html(towrite, include_plotlyjs="cdn")
     
+    ddf.save(towrite, close_file=True)
 
     b64 = base64.b64encode(towrite.read()).decode()
         
@@ -185,7 +186,7 @@ if uploaded_file:
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
-#   generate_html_download_link(m)
+    generate_html_download_link(m)
 
 
 
