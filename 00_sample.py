@@ -50,7 +50,7 @@ def generate_html_download_link(fig):
 
 st.set_page_config(layout="wide")
 st.title('맵만들기..? 📈')
-st.subheader('Feed me with your Excel file')
+st.subheader('엑셀파일을 아래에.... 올리면?')
 
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
@@ -93,7 +93,7 @@ if uploaded_file:
     
     
     from folium.features import DivIcon
-    m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', zoom_start=8)
+    m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', width="100%", height="100%", zoom_start=8)
 
 
     choropleth = folium.Choropleth(
