@@ -110,7 +110,7 @@ if uploaded_file:
     ).add_to(m.m1)
 
 
-    plugins.Fullscreen(position='topright',
+    plugins.Fullscreen(position='topright',                ㅜ
                      title='Click to Expand',
                      title_cancel='Click to Exit',
                      force_separate_button=True).add_to(m.m1)
