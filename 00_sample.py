@@ -107,7 +107,7 @@ if uploaded_file:
     choropleth = folium.Choropleth(
         geo_data=state_geo1,
         name='sigun_people',
-        data=df&choice_selected&00,
+        data='df'+choice_selected+'00',
         columns = ['SIG_CD','지원자'],
         key_on = 'feature.properties.SIG_CD',
         nan_fill_color='black',
@@ -123,13 +123,13 @@ if uploaded_file:
                        title_cancel='Click to Exit',
                        force_separate_button=True).add_to(m.m1)
     plugins.MousePosition().add_to(m.m1)
-    plugins.MarkerCluster(regional_count&choice_selected).add_to(m.m1)
+    plugins.MarkerCluster('regional_count'+choice_selected).add_to(m.m1)
 
 
     choropleth = folium.Choropleth(
         geo_data=state_geo1,
         name='sigun_people',
-        data=df&choice_selected&11,
+        data='df'+choice_selected+'11',
         columns = ['SIG_CD','지원자'],
         key_on = 'feature.properties.SIG_CD',
         nan_fill_color='black',
@@ -144,7 +144,7 @@ if uploaded_file:
                      title_cancel='Click to Exit',
                      force_separate_button=True).add_to(m.m2)
     plugins.MousePosition().add_to(m.m2)
-    plugins.MarkerCluster(regional_count&choice_selected&1).add_to(m.m2)
+    plugins.MarkerCluster('regional_count'+choice_selected+'1').add_to(m.m2)
     
     m.save("듀얼맵.html", close_file=True)
     
