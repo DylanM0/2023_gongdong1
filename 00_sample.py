@@ -7,8 +7,8 @@
 import streamlit as st  # pip install streamlit
 import pandas as pd  # pip install pandas
 # import plotly.express as px  # pip install plotly-express
-# import base64  # Standard Python Module
-# from io import StringIO, BytesIO  # Standard Python Module
+import base64  # Standard Python Module
+from io import StringIO, BytesIO  # Standard Python Module
 
 import folium
 from folium import plugins
@@ -41,10 +41,10 @@ def generate_excel_download_link(df):
 def generate_html_download_link(m):
     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
     towrite = StringIO()
-    fig.write_html(towrite, include_plotlyjs="cdn")
+    m.write_html(towrite, include_plotlyjs="cdn")
     towrite = BytesIO(towrite.getvalue().encode())
     b64 = base64.b64encode(towrite.read()).decode()
-    href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="plot.html">Download Plot</a>'
+    href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="듀얼맵.html">Download 듀얼맵</a>'
     return st.markdown(m, unsafe_allow_html=True)
 
 
@@ -168,8 +168,8 @@ if uploaded_file:
 
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
-#     generate_excel_download_link(df_grouped)
-    st.markdown("듀얼맵.html", unsafe_allow_html=True)
+#   generate_excel_download_link(df_grouped)
+    generate_excel_download_link(m)
 
 
 
