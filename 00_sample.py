@@ -41,10 +41,10 @@ def generate_excel_download_link(df):
 def generate_html_download_link(m):
     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
     # towrite = StringIO()
-    # m.write_html(towrite, include_plotlyjs="cdn")
+    towrite = BytesIO(towrite.getvalue().encode())    
+    m.write_html(towrite, include_plotlyjs="cdn")
     
-    towrite = BytesIO(towrite.getvalue().encode())
-    m.save(towrite,close_file=True)
+
     b64 = base64.b64encode(towrite.read()).decode()
         
     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="듀얼맵.html">Download 듀얼맵</a>'
