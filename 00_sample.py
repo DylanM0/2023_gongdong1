@@ -61,6 +61,9 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     
+    choice = ['종합','교과']
+    choice_selected = st.selectbox("선택해주세요", choice)
+    
     
     df종합 = df[df['전형유형']=='학생부종합']
     df교과 = df[df['전형유형']=='학생부교과']
@@ -96,8 +99,7 @@ if uploaded_file:
     df교과00['지원자'] = df교과00['지원자'].astype(int)
     
     
-    choice = ['종합','교과']
-    choice_selected = st.selectbox("선택해주세요", choice)
+
     
     
     from folium.features import DivIcon
