@@ -48,7 +48,7 @@ def generate_html_download_link(m):
     b64 = base64.b64encode(towrite.read()).decode()
         
     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="듀얼맵.html">Download 듀얼맵</a>'
-    return st.markdown(m, unsafe_allow_html=True)
+    return st.markdown(href, unsafe_allow_html=True)
 
 
 st.set_page_config(layout="wide")
@@ -183,9 +183,9 @@ if uploaded_file:
 #     st.plotly_chart(fig)
 
     # -- DOWNLOAD SECTION
-#    st.subheader('Downloads:')
+    st.subheader('Downloads:')
 #   generate_excel_download_link(df_grouped)
-#    generate_html_download_link(m)
+    generate_html_download_link(m)
 
 
 
