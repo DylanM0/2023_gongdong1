@@ -110,10 +110,10 @@ if uploaded_file:
     ).add_to(m.m1)
 
 
-    plugins.Fullscreen(position='topright',                ㅜ
-                     title='Click to Expand',
-                     title_cancel='Click to Exit',
-                     force_separate_button=True).add_to(m.m1)
+    plugins.Fullscreen(position='topright',
+                       title='Click to Expand',
+                       title_cancel='Click to Exit',
+                       force_separate_button=True).add_to(m.m1)
     plugins.MousePosition().add_to(m.m1)
     plugins.MarkerCluster(regional_count종합).add_to(m.m1)
 
