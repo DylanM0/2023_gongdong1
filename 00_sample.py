@@ -115,8 +115,8 @@ if uploaded_file:
         nan_fill_color='black',
         fill_color='BuPu',
         fill_opactiy=0.7,
-        line_opacity=0.5,
-        legend_name='jonghab_all'
+        line_opacity=0.5
+#        legend_name='jonghab_all'
     ).add_to(m.m1) 
 
 
