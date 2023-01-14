@@ -43,7 +43,7 @@ def generate_html_download_link(ddf):
     # towrite = StringIO()
     towrite = BytesIO(towrite.getvalue().encode())    
     # ddf.write_html(towrite, include_plotlyjs="cdn")
-    ddf.write_html(towrite)
+    ddf.to_html(towrite)
     # ddf.save(towrite, close_file=True)
 
     b64 = base64.b64encode(towrite.read()).decode()
@@ -186,7 +186,7 @@ if uploaded_file:
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
-#   generate_html_download_link(m)
+    generate_html_download_link(m)
 
 
 
