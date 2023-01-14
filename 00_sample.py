@@ -43,8 +43,8 @@ def generate_html_download_link(ddf):
     # towrite = StringIO()
     towrite = BytesIO(towrite.getvalue().encode())    
     # ddf.write_html(towrite, include_plotlyjs="cdn")
-    
-    ddf.save(towrite, close_file=True)
+    ddf.write_html(towrite)
+    # ddf.save(towrite, close_file=True)
 
     b64 = base64.b64encode(towrite.read()).decode()
         
