@@ -93,14 +93,14 @@ if uploaded_file:
     
     
     from folium.features import DivIcon
-    m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', width='100%', zoom_start=8)
+    m = folium.plugins.DualMap(location = [35.8,127], tiles = 'OpenStreetMap', zoom_start=8)
 
 
     choropleth = folium.Choropleth(
         geo_data=state_geo1,
         name='sigun_people',
         data=df종합00,
-        columns = ('SIG_CD','지원자'),
+        columns = ['SIG_CD','지원자'],
         key_on = 'feature.properties.SIG_CD',
         nan_fill_color='black',
         fill_color='BuPu',
@@ -122,7 +122,7 @@ if uploaded_file:
         geo_data=state_geo1,
         name='sigun_people',
         data=df교과00,
-        columns = ('SIG_CD','지원자'),
+        columns = ['SIG_CD','지원자'],
         key_on = 'feature.properties.SIG_CD',
         nan_fill_color='black',
         fill_color='RdPu',
