@@ -117,7 +117,7 @@ if uploaded_file:
         fill_opactiy=0.7,
         line_opacity=0.5,
         legend_name='jonghab_all'
-    ).add_to(m.m1)
+    ).add_to(m.m1) 
 
 
     plugins.Fullscreen(position='topright',
