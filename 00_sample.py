@@ -48,8 +48,8 @@ def generate_html_download_link(fig):
     return st.markdown(href, unsafe_allow_html=True)
 
 
-st.set_page_config(page_title='Excel Plotter')
-st.title('Excel Plotter 📈')
+st.set_page_config(layout="wide")
+st.title('맵만들기..? 📈')
 st.subheader('Feed me with your Excel file')
 
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
