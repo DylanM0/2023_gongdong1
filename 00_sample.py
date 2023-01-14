@@ -61,12 +61,17 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     
+    
+    df1 = pd.read_excel('data/HS_locations_new.xlsx')
+    dfa = pd.merge(df,df1, left_on='고교코드',right_on='NEIS_CODE', how='left')
+    
+    
     choice = ['종합','교과']
     choice_selected = st.selectbox("선택해주세요", choice)
     
     
-    df종합 = df[df['전형유형']=='학생부종합']
-    df교과 = df[df['전형유형']=='학생부교과']
+    df종합 = dfa[dfa['전형유형']=='학생부종합']
+    df교과 = dfa[dfa['전형유형']=='학생부교과']
     
     df종합1 = df종합[df종합['지원자']>=5]
     df교과1 = df교과[df교과['지원자']>=5]
