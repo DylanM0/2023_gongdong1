@@ -62,10 +62,9 @@ if uploaded_file:
     st.dataframe(df)
     
     
-    df1 = pd.read_excel('data/HS_locations_new.xlsx')
+    df1 = pd.read_excel('data/location.xlsx')
     dfa = pd.merge(df,df1, left_on='고교코드',right_on='NEIS_CODE', how='left')
     
-    dfa.fillna(0)
     
     
     choice = ['종합','교과']
