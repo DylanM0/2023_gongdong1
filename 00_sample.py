@@ -40,8 +40,8 @@ def generate_excel_download_link(df):
 
 def generate_html_download_link(ddf):
     # Credit Plotly: https://discuss.streamlit.io/t/download-plotly-plot-as-html/4426/2
-    # towrite = StringIO()
-    towrite = BytesIO(towrite.getvalue().encode())    
+    towrite = StringIO(towrite.getvalue().encode())
+    # towrite = BytesIO(towrite.getvalue().encode())    
     # ddf.write_html(towrite, include_plotlyjs="cdn")
     ddf.write_html(towrite)
         
