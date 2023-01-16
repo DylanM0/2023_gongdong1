@@ -74,13 +74,16 @@ if uploaded_file:
     st.table(dfa[dfa['위도'].isnull()])
     
     
+    dfa1 = dfa[dfa['위도'].innotnull()]
+    
+    
     
     choice = ['종합','교과']
     choice_selected = st.selectbox("선택해주세요", choice)
     
     
-    df종합 = dfa[dfa['전형유형']=='학생부종합']
-    df교과 = dfa[dfa['전형유형']=='학생부교과']
+    df종합 = dfa1[dfa1['전형유형']=='학생부종합']
+    df교과 = dfa1[dfa1['전형유형']=='학생부교과']
     
     df종합1 = df종합[df종합['지원자']>=5]
     df교과1 = df교과[df교과['지원자']>=5]
