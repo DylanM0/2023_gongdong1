@@ -102,16 +102,20 @@ if uploaded_file:
     regional_count교과=df교과[['위도','경도']]
     
     df종합11 = pd.DataFrame(df종합1.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
+    df종합11['SIG_CD'] = df종합11['SIG_CD'].astype(int)
     df종합11['SIG_CD'] = df종합11['SIG_CD'].astype(str)
     df종합00 = pd.DataFrame(df종합.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
+    df종합00['SIG_CD'] = df종합00['SIG_CD'].astype(int)
     df종합00['SIG_CD'] = df종합00['SIG_CD'].astype(str)
     
     
     
     df교과11 = pd.DataFrame(df교과1.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
+    df교과11['SIG_CD'] = df교과11['SIG_CD'].astype(int)
     df교과11['SIG_CD'] = df교과11['SIG_CD'].astype(str)
     df교과11['지원자'] = df교과11['지원자'].astype(int)
     df교과00 = pd.DataFrame(df교과.groupby(['SIG_CD','고교지역','고교세부지역'])['지원자'].sum()).reset_index()
+    df교과00['SIG_CD'] = df교과00['SIG_CD'].astype(int)
     df교과00['SIG_CD'] = df교과00['SIG_CD'].astype(str)
     df교과00['지원자'] = df교과00['지원자'].astype(int)
     
