@@ -160,6 +160,7 @@ if uploaded_file:
     plugins.MarkerCluster(eval('regional_count'+choice_selected+'1')).add_to(m.m2)
     
     html1 = m.save("듀얼맵.html", close_file=True)
+    htt = html_down(m)
     
     st_folium(m)
     
@@ -193,7 +194,7 @@ if uploaded_file:
     
     st.download_button(
     label="Download html",
-    data=html1,
+    data=htt,
     file_name='듀얼맵.html',
    # mime='map/html',
 )
