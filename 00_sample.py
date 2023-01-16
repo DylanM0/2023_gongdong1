@@ -43,9 +43,9 @@ def generate_html_download_link(ddf):
     # towrite = StringIO(towrite.getvalue().encode())
     towrite = BytesIO()    
     # ddf.write_html(towrite, include_plotlyjs="cdn")
-    #ddf.to_html(towrite, encoding="utf-8")
-        
-    ddf.save(towrite, close_file=True)
+    ddf.write_html(towrite)
+            
+    #ddf.save(towrite, close_file=True)
 
     b64 = base64.b64encode(towrite.read()).decode()
         
@@ -160,7 +160,7 @@ if uploaded_file:
     plugins.MarkerCluster(eval('regional_count'+choice_selected+'1')).add_to(m.m2)
     
     html1 = m.save("듀얼맵.html", close_file=True)
-    htt = html_down(m)
+
     
     st_folium(m)
     
@@ -192,12 +192,7 @@ if uploaded_file:
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
     
-    st.download_button(
-    label="Download html",
-    data=htt,
-    file_name='듀얼맵.html',
-   # mime='map/html',
-)
+    generate_html_download_link(html1)
     #generate_html_download_link(m)
 
 
