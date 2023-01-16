@@ -193,7 +193,7 @@ if uploaded_file:
     
     st.download_button(
     label="Download html",
-    data=m,
+    data=html1,
     file_name='듀얼맵.html',
     mime='text/html',
 )
