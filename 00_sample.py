@@ -43,9 +43,9 @@ def generate_html_download_link(ddf):
     # towrite = StringIO(towrite.getvalue().encode())
     towrite = BytesIO()    
     # ddf.write_html(towrite, include_plotlyjs="cdn")
-    ddf.write_html(towrite)
+    #ddf.write_html(towrite)
             
-    #ddf.save(towrite, close_file=True)
+    ddf.save(towrite)
 
     b64 = base64.b64encode(towrite.read()).decode()
         
@@ -165,7 +165,7 @@ if uploaded_file:
     plugins.MousePosition().add_to(m.m2)
     plugins.MarkerCluster(eval('regional_count'+choice_selected+'1')).add_to(m.m2)
     
-    html1 = m.save("듀얼맵.html", close_file=True)
+    m.save("듀얼맵.html", close_file=True)
 
     
     st_folium(m)
@@ -198,7 +198,7 @@ if uploaded_file:
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
     
-    #generate_html_download_link(m)
+    generate_html_download_link(m)
 
 
 
