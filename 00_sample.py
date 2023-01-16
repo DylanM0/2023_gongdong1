@@ -195,7 +195,7 @@ if uploaded_file:
     label="Download html",
     data=html1,
     file_name='듀얼맵.html',
-    mime='map/html',
+   # mime='map/html',
 )
     #generate_html_download_link(m)
 
