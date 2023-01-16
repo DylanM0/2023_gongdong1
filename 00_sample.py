@@ -52,6 +52,9 @@ def generate_html_download_link(ddf):
     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="듀얼맵.html">Download 듀얼맵</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
+def html_down(ddf1)
+    return ddf1.to_html().encode('utf-8')
+
 
 st.set_page_config(layout="wide")
 st.title('맵만들기..? 📈')
@@ -156,7 +159,7 @@ if uploaded_file:
     plugins.MousePosition().add_to(m.m2)
     plugins.MarkerCluster(eval('regional_count'+choice_selected+'1')).add_to(m.m2)
     
-    m.save("듀얼맵.html", close_file=True)
+    html1 = m.save("듀얼맵.html", close_file=True)
     
     st_folium(m)
     
@@ -187,6 +190,13 @@ if uploaded_file:
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
+    
+    st.download_button(
+    label="Download html",
+    data=html,
+    file_name='듀얼맵.html',
+    mime='text/html',
+)
     #generate_html_download_link(m)
 
 
