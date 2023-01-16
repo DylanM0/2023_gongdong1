@@ -74,7 +74,7 @@ if uploaded_file:
     st.table(dfa[dfa['위도'].isnull()])
     
     
-    dfa1 = dfa[dfa['위도'].isnotnull()]
+    dfa1 = dfa[dfa['위도'].notnull()]
     
     
     
