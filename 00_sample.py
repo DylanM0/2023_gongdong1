@@ -70,6 +70,9 @@ if uploaded_file:
     df1 = pd.read_excel('data/location.xlsx')
     dfa = pd.merge(df,df1, left_on='고교코드',right_on='NEIS_CODE', how='left')
     
+    st.subheader('빈셀은??')
+    st.table(dfa[dfa['위도'].isnull()])
+    
     
     
     choice = ['종합','교과']
