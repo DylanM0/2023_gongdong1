@@ -52,7 +52,7 @@ def generate_html_download_link(ddf):
     href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="듀얼맵.html">Download 듀얼맵</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
-def html_down(ddf1)
+def html_down(ddf1):
     return ddf1.to_html().encode('utf-8')
 
 
