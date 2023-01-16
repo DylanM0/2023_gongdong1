@@ -192,7 +192,7 @@ if uploaded_file:
     st.subheader('Downloads:')
     generate_excel_download_link(dfa)
     
-    generate_html_download_link(html1)
+    generate_html_download_link(m)
     #generate_html_download_link(m)
 
 
